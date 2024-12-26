@@ -1,9 +1,20 @@
+// firestore.rules
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if false;
+    match /receipts/{receiptId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+    
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.resource.data.type == 'custom';
+    }
+    
+    match /stores/{storeId} {
+      allow read: if true;
+      allow write: if false;
     }
   }
 }

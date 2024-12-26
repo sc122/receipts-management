@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@date-io/dayjs": "^3.2.0",
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.3.0",
@@ -23,6 +24,7 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.2.0",
     "react-router-dom": "^7.1.1",
+    "stylis": "^4.3.4",
     "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
